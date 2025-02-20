@@ -28,49 +28,53 @@ canvas {
     font-family: monospace;
     font-size: 18px;
     text-align: center;
-    position: absolute;
-    top: 80px;
+    position: absolute; /* Position it absolutely at the top */
+    top: 80px; /* Moved the ASCII art down a little bit */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Center it horizontally */
     color: #333;
 }
 
+
 /* Main Container for All Content */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    padding: 20px;
-    gap: 20px; /* Ensures spacing between items */
-    text-align: center;
     position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Portfolio Box (Center) */
 .section {
+    text-align: center;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(15px);
-    padding: 40px;
+    padding: 50px;
     border-radius: 20px;
-    width: 90%;
-    max-width: 500px;
+    width: 500px;
+    height: 200px;
+    position: absolute;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    top: 50%;
+    transform: translateY(-50%);
 }
+
 
 /* Discord Icon - Font Awesome */
 .discord-icon {
-    font-size: 45px;
-    color: #5865F2;
+    font-size: 45px; /* Increased size of the Discord icon */
+    color: #5865F2; /* Discord's blue color */
     transition: 0.3s;
 }
 
 .discord-icon:hover {
     transform: scale(1.1);
-    color: #7289da;
+    color: #7289da; /* Hover effect color */
 }
+
 
 /* Info Boxes - Positioned Around Portfolio Box */
 .info-box {
@@ -92,74 +96,36 @@ canvas {
 
 /* Positioning Info Boxes */
 .left {
-    left: 15%;
+    left: 15%;  /* Moved the left box closer to the center */
     top: 40%;
 }
 
 .right {
-    right: 15%;
+    right: 15%;  /* Moved the right box closer to the center */
     top: 40%;
 }
 
 .bottom {
     left: 50%;
-    top: 62%;
-    transform: translateX(-50%);
+    top: 62%;  /* Adjusted to align with the portfolio */
+    transform: translateX(-50%);  /* Centers horizontally */
 }
 
-/* Hover Effect for Bottom Box */
+/* Remove slide animation from bottom box, only scale */
 .bottom:hover {
-    transform: scale(1.05) translateX(-50%);
+    transform: scale(1.05) translateX(-50%);  /* Keep the hover effect consistent */
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    /* Keep the layout as it is but scale down the info boxes */
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    /* Adjust positioning of info boxes on smaller screens */
-    .left, .right, .bottom {
-        position: absolute;
-        width: 300px; /* Keep the boxes smaller but not full-width */
-        margin: 10px;
-        height: 180px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    /* Left box adjusts its position for mobile */
-    .left {
-        top: 20%;
-    }
-
-    /* Right box adjusts its position for mobile */
-    .right {
-        top: 50%;
-    }
-
-    /* Bottom info box stays centered */
-    .bottom {
-        top: 75%;
-    }
+/* Discord Icon */
+.discord-icon {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 10px #5865F2);
 }
 
-@media (max-width: 480px) {
-    /* Reduce padding for even smaller screens */
-    .section {
-        padding: 20px;
-    }
-
-    /* Reduce font size of ASCII art for small screens */
-    .ascii-text {
-        font-size: 14px;
-    }
-
-    /* Adjust info box width */
-    .info-box {
-        max-width: 100%;
-        padding: 20px;
-    }
+.discord-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px #5865F2);
 }
