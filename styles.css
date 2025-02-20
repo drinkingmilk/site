@@ -28,11 +28,14 @@ canvas {
     font-family: monospace;
     font-size: 18px;
     text-align: center;
-    margin-top: 20px; /* Adjusted to prevent overlapping */
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #333;
 }
 
-/* Main Container */
+/* Main Container for All Content */
 .container {
     display: flex;
     flex-direction: column;
@@ -43,9 +46,10 @@ canvas {
     padding: 20px;
     gap: 20px; /* Ensures spacing between items */
     text-align: center;
+    position: relative;
 }
 
-/* Portfolio Box */
+/* Portfolio Box (Center) */
 .section {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(15px);
@@ -56,34 +60,7 @@ canvas {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Info Box Container */
-.info-box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Ensures spacing between boxes */
-    max-width: 1000px;
-    width: 100%;
-}
-
-/* Info Boxes */
-.info-box {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.info-box:hover {
-    transform: scale(1.05);
-}
-
-/* Discord Icon */
+/* Discord Icon - Font Awesome */
 .discord-icon {
     font-size: 45px;
     color: #5865F2;
@@ -95,14 +72,90 @@ canvas {
     color: #7289da;
 }
 
-/* Responsive Design */
+/* Info Boxes - Positioned Around Portfolio Box */
+.info-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    margin: 0 20px;
+}
+
+.info-box:hover {
+    transform: scale(1.05);
+}
+
+/* Positioning Info Boxes */
+.left, .right, .bottom {
+    margin-top: 20px;
+}
+
+.left {
+    margin-left: 10%;
+}
+
+.right {
+    margin-right: 10%;
+}
+
+.bottom {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Hover Effect for Bottom Box */
+.bottom:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .info-box-container {
+    /* Make the layout more compact on smaller screens */
+    .container {
         flex-direction: column;
-        align-items: center;
+        padding: 10px;
     }
 
+    /* Adjust info boxes for smaller screen sizes */
     .info-box {
-        width: 90%;
+        max-width: 90%;
+        margin: 10px auto;
+    }
+
+    .left, .right {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    /* Centering the bottom info box */
+    .bottom {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduce padding for even smaller screens */
+    .section {
+        padding: 20px;
+    }
+
+    /* Reduce the font size of ASCII art for small screens */
+    .ascii-text {
+        font-size: 14px;
+    }
+
+    /* Adjust info box width */
+    .info-box {
+        max-width: 100%;
+        padding: 20px;
     }
 }
