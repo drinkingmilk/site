@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Add Font Awesome for the Discord Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <canvas id="particles"></canvas> <!-- Particle Background -->
+
+    <!-- Main Container for All Content -->
+    <div class="container">
+        
+        <!-- ASCII Art Text -->
+        <div class="ascii-text">
+            <pre>
+                     _                        _                
+                    | |                      | |               
+ _ __   __ _  _   _ | |__    __ _  _ __    __| | ___  ___  ___ 
+| '__| / _` || | | || '_ \  / _` || '_ \  / _` |/ __|/ __|/ __|
+| |   | (_| || |_| || |_) || (_| || | | || (_| |\__ \\__ \\__ \
+|_|    \__,_| \__, ||_.__/  \__,_||_| |_| \__,_||___/|___/|___|
+               __/ |                                           
+              |___/                                             
+            </pre>
+        </div>
+
+        <!-- Main Portfolio Box -->
+        <div id="home" class="section">
+            <h1>whats up!</h1>
+            <p>i'm <strong>ray</strong>, i like playing minecraft anarchy and coding in <strong>javascript<strong>.</p>
+        </div>
+
+        <!-- Info Boxes -->
+        <div class="info-box left">
+            <h3>Skills</h3>
+            <p>&bull; HTML, CSS, Javascript</p>
+            <p>&bull; 100% a pro crystal pvper</p>
+            <p>&bull; Top 10 no lifers</p>
+        </div>
+
+        <div class="info-box right">
+            <h3>About me</h3>
+            <p>&bull; I like to play minecraft anarchy</p>
+            <p>&bull; I like coding discord and mineflayer bots in javascript</p>
+            <p>&bull; I have an obsession with tuxedo cats</p>
+        </div>
+
+        <div class="info-box bottom">
+            <h3>Contact</h3>
+            <!-- Add the Discord Icon here -->
+            <a href="https://discord.gg/milkstore" target="_blank">
+                <i class="fa-brands fa-discord discord-icon"></i>
+            </a>
+            <p class="discord-text">Email me @ raybandsss1@gmail.com</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
