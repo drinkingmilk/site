@@ -114,7 +114,7 @@ canvas {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    /* Make the layout more compact on smaller screens */
+    /* Keep the layout as it is but scale down the info boxes */
     .container {
         flex-direction: column;
         padding: 10px;
@@ -122,19 +122,27 @@ canvas {
 
     /* Adjust positioning of info boxes on smaller screens */
     .left, .right, .bottom {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 10px auto;
-        width: 90%; /* Make boxes more narrow */
+        position: absolute;
+        width: 300px; /* Keep the boxes smaller but not full-width */
+        margin: 10px;
+        height: 180px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    /* Bottom info box aligns to the center */
+    /* Left box adjusts its position for mobile */
+    .left {
+        top: 20%;
+    }
+
+    /* Right box adjusts its position for mobile */
+    .right {
+        top: 50%;
+    }
+
+    /* Bottom info box stays centered */
     .bottom {
-        margin-top: 10px;
-        width: 90%;
-        text-align: center;
+        top: 75%;
     }
 }
 
