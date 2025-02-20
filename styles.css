@@ -74,18 +74,16 @@ canvas {
 
 /* Info Boxes - Positioned Around Portfolio Box */
 .info-box {
-    position: relative;
+    position: absolute;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 15px;
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
     height: 200px;
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-    margin: 0 20px;
 }
 
 .info-box:hover {
@@ -93,27 +91,25 @@ canvas {
 }
 
 /* Positioning Info Boxes */
-.left, .right, .bottom {
-    margin-top: 20px;
-}
-
 .left {
-    margin-left: 10%;
+    left: 15%;
+    top: 40%;
 }
 
 .right {
-    margin-right: 10%;
+    right: 15%;
+    top: 40%;
 }
 
 .bottom {
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
+    left: 50%;
+    top: 62%;
+    transform: translateX(-50%);
 }
 
 /* Hover Effect for Bottom Box */
 .bottom:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateX(-50%);
 }
 
 /* Media Queries for Responsiveness */
@@ -124,21 +120,21 @@ canvas {
         padding: 10px;
     }
 
-    /* Adjust info boxes for smaller screen sizes */
-    .info-box {
-        max-width: 90%;
-        margin: 10px auto;
-    }
-
-    .left, .right {
+    /* Adjust positioning of info boxes on smaller screens */
+    .left, .right, .bottom {
         position: relative;
-        margin-top: 20px;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+        width: 90%; /* Make boxes more narrow */
     }
 
-    /* Centering the bottom info box */
+    /* Bottom info box aligns to the center */
     .bottom {
-        width: 80%;
-        margin-top: 20px;
+        margin-top: 10px;
+        width: 90%;
+        text-align: center;
     }
 }
 
@@ -148,7 +144,7 @@ canvas {
         padding: 20px;
     }
 
-    /* Reduce the font size of ASCII art for small screens */
+    /* Reduce font size of ASCII art for small screens */
     .ascii-text {
         font-size: 14px;
     }
